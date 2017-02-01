@@ -9,6 +9,9 @@ hgn = {
 			document.getElementById("word").innerHTML = tgtWd;
 			hgn.tgt = tgtWd;
 	}
+	// need a function to print underscores
+	// need a function to replace underscores with characters
+	// need a advance to the next word function
 };
 document.getElementById("mssg").innerHTML = "hello";
 
@@ -18,8 +21,6 @@ document.getElementById("dialog").innerHTML = "What is this?";
 
 document.getElementById("counter").innerHTML = 0;
 
-// document.getElementById("word").innerHTML = "_ ";
-
 document.getElementById("life").innerHTML = 13;
 
 hgn.wordGen();
@@ -27,16 +28,17 @@ hgn.wordGen();
 
 document.onkeyup = function(event) {
  	var ek = event.key;
-	hgn.gssd.push(ek);
-
-	// loops through the target word
-	for (var i = 0; i < hgn.tgt.length; i++){
-		if (hgn.tgt.charAt(i) == ek){
-		hgn.idxs.push(i);
-
+ 	for (i = -1; i < hgn.gssd.length; i++) {
+ 		if (hgn.gssd.indexOf(ek) != -1) {
+ 			break;
+ 		}			
+		else { hgn.gssd.push(ek);
+			// loops through the target word | try to build a regular expression to perform this task
+			for (var i = 0; i < hgn.tgt.length; i++) {
+				if (hgn.tgt.charAt(i) === ek) {
+					hgn.idxs.push(i);
+				}
+			}
 		}
-
 	}
-
-	// writes to the html	
 }
