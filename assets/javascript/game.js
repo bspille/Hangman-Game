@@ -8,6 +8,12 @@ hgn = {
 			var tgtWd = hgn.wdBnk[Math.floor(Math.random() * hgn.wdBnk.length)];
 			document.getElementById("word").innerHTML = tgtWd;
 			hgn.tgt = tgtWd;
+	},
+	// uses k as a parameter name to pass to the regexp ???
+	test: function(k){
+		var re = new RegExp(k, "g");
+		var chk = this.tgt.match(re);
+		console.log(chk);
 	}
 	// need a function to print underscores
 	// need a function to replace underscores with characters
@@ -28,6 +34,12 @@ hgn.wordGen();
 
 document.onkeyup = function(event) {
  	var ek = event.key;
+ 	var kc = event.keyCode;
+ 	// call test function from object and pass event key as a parameter
+ 	hgn.test(event.key);
+
+ 	// logged 65 - 90 for alpha keycodes
+
  	for (i = -1; i < hgn.gssd.length; i++) {
  		if (hgn.gssd.indexOf(ek) != -1) {
  			break;
