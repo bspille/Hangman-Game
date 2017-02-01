@@ -1,4 +1,15 @@
-
+hgn = {
+	idxs: [],
+	wdBnk: ["strike", "freedom", "justice", "dominion"],
+	gssd: [],
+	tgt: "",
+	// trn: document.getElementById("life").innerHTML - 1;,
+	wordGen: function()	{
+			var tgtWd = hgn.wdBnk[Math.floor(Math.random() * hgn.wdBnk.length)];
+			document.getElementById("word").innerHTML = tgtWd;
+			hgn.tgt = tgtWd;
+	}
+};
 document.getElementById("mssg").innerHTML = "hello";
 
 // document.getElementById("gImage").innerHTML = ;
@@ -11,43 +22,21 @@ document.getElementById("counter").innerHTML = 0;
 
 document.getElementById("life").innerHTML = 13;
 
-// word bank used for the game
-var wordBank = ["strike", "freedom",
-"justice", "dominion"]
+hgn.wordGen();
 
 
-
-
-
-// selects word from word bank at random
-var ranWord = wordBank[Math.floor(Math.random() * wordBank.length)];
-document.getElementById("word").innerHTML = ranWord;
-
-// provides keyboard input for the game
 document.onkeyup = function(event) {
-	// the key that is played
- 	var guess = event.key;
- 	// index value of the key played
-	var indices = [];
-	// the target word generated from a word bank array
-	var target = document.getElementById("word").innerHTML;
- 	 // the keys that where played
-	var guessed = document.getElementById("log").innerHTML + guess;
-	// the count down of guess left from 13
-	var tries = document.getElementById("life").innerHTML - 1;
+ 	var ek = event.key;
+	hgn.gssd.push(ek);
+
 	// loops through the target word
-	for (var i = 0; i < target.length; i++){
-		if (target.charAt(i) == guess){
-		indices.push(i);
+	for (var i = 0; i < hgn.tgt.length; i++){
+		if (hgn.tgt.charAt(i) == ek){
+		hgn.idxs.push(i);
 
 		}
 
 	}
-	// writes to the html
-	document.getElementById("log").innerHTML = guessed;	
-	document.getElementById("life").innerHTML = tries;
-		console.log(indices);
-		console.log(target);
-		console.log(target.length);
-		console.log(guess);
+
+	// writes to the html	
 }
