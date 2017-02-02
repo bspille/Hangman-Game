@@ -3,19 +3,25 @@ hgn = {
 	wdBnk: ["strike", "freedom", "justice", "dominion"],
 	gssd: [],
 	tgt: "",
+	display: "",
 	// trn: document.getElementById("life").innerHTML - 1;,
 	wordGen: function()	{
-			var tgtWd = hgn.wdBnk[Math.floor(Math.random() * hgn.wdBnk.length)];
-			document.getElementById("word").innerHTML = tgtWd;
-			hgn.tgt = tgtWd;
+			// random generation of a word frome a word bank and stores is in tgt
+			this.tgt = hgn.wdBnk[Math.floor(Math.random() * hgn.wdBnk.length)];
+			// checks for all letters and generates a array record
+			var re = new RegExp(/[a-z]/, "g");
+			// replaces all characters in the tgt with _
+			this.display = this.tgt.replace(re, "_");
+			// writes the initial display
+			document.getElementById("word").innerHTML = this.display;
 	},
-	// uses k as a parameter name to pass to the regexp ???
-	test: function(k){
+
+	srchTgt: function(k){
 		var re = new RegExp(k, "g");
-		var chk = this.tgt.match(re);
-		console.log(chk);
+		var chk = this.tgt.search(re);
+		this.idxs.push(chk);
 	}
-	// need a function to print underscores
+	
 	// need a function to replace underscores with characters
 	// need a advance to the next word function
 };
