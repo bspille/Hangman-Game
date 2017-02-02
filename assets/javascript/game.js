@@ -1,15 +1,15 @@
 hgn = {
 	idxs: [],
-	wdBnk: ["strike", "freedom", "justice", "dominion"],
+	wdBnk: ["Strike", "Freedom", "Justice", "Dominion"],
 	gssd: [],
 	tgt: "",
 	display: "",
-	// trn: document.getElementById("life").innerHTML - 1;,
+
 	wordGen: function()	{
 			// random generation of a word frome a word bank and stores is in tgt
 			this.tgt = hgn.wdBnk[Math.floor(Math.random() * hgn.wdBnk.length)];
 			// checks for all letters and generates a array record
-			var re = new RegExp(/[a-z]/, "g");
+			var re = new RegExp(/[a-z A-Z]/, "g");
 			// replaces all characters in the tgt with _
 			this.display = this.tgt.replace(re, "_");
 			// writes the initial display
@@ -21,9 +21,11 @@ hgn = {
 		var chk = this.tgt.search(re);
 		this.idxs.push(chk);
 	}
-	
-	// need a function to replace underscores with characters
-	// need a advance to the next word function
+	// need fun text
+	// need a picture changer
+	// need a turn counter
+	// need a function to replace underscores
+	// need a function to advance the game
 };
 document.getElementById("mssg").innerHTML = "hello";
 
