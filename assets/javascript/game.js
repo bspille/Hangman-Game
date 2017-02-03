@@ -96,7 +96,7 @@ hangman = {
 					// 
 					this.cntDwn--;
 					this.imageDisplay.src = "assets/images/" + this.gallows[this.cntDwn];
-					this.winDisplay.innerHTML = this.cntDwn;
+					this.gessRmDisplay.innerHTML = this.cntDwn;
 				}
 			}
 		}
@@ -116,13 +116,13 @@ hangman = {
 
 	// sets win and lose conditions
 	condCheck: function() {
- 		if (hangman.display == hangman.trgt){
- 			hangman.cntup++;
- 			this.winDisplay.innerHTML = hangman.cntup;
+ 		if (this.display == this.trgt){
+ 			this.cntup++;
+ 			this.winDisplay.innerHTML = this.cntup;
  			this.dialogDisplay.innerHTML = "YOU WIN!";
  		}
 
- 		if (hangman.cntDwn == 0) {
+ 		if (this.cntDwn == 0) {
  			this.dialogDisplay.innerHTML = "YOU LOSE!";
  		}
 	}
