@@ -43,7 +43,11 @@ hangman = {
 	// the word bank array
 	wdBnk: ["Strike", "Freedom", "Justice",
 		 	"Dominion", "General", "Unilateral",
-		  	"Launch", "earth", "federation"
+		  	"Launch", "Earth", "Federation",
+		  	"Cannon", "Sabre", "Shield",
+		  	"Colony", "Space", "Planet",
+		  	"Archangel", "Mass-Driver", "Re-entry",
+		  	"moon", "armor"
 		  	],
 	
 	// the gallows image array		  	
@@ -55,11 +59,12 @@ hangman = {
 
 	// generates starting values
 	wordGen: function()	{
+			
 			// checks for all letters and generates a array record
 			var re = new RegExp(/[a-z]/, "ig");
+			
 			// random generation of a word frome a word bank and stores is in tgt
 			this.trgt = this.wdBnk[Math.floor(Math.random() * this.wdBnk.length)];
-			// starting values
 			this.display = this.trgt.replace(re, "_");
 			this.cntDwn = 7;
 			this.gessd = "";
@@ -75,25 +80,30 @@ hangman = {
 
 	// searches the target word for the key input
 	srchTrgt: function(k) {
+		
 		// passes the event.key as a parameter k to the regexp \event.key value\g
 		var re = new RegExp(k, "ig");
+		
 		// do this function while condition is true
 		if (this.cntDwn > 0) {
+			
 			// no repeat condition
 			var noRpt = this.gessd.match(re);
 			if ( noRpt == null) {
 				this.gessd = this.gessd + k;
+				
 				// writes the guesses to a log area on the html
 				this.logDisplay.innerHTML = this.gessd;
+				
 				// applies the regexp to the tgt string
-			
 				var find = this.trgt.match(re);
+				
 				//filters out null outputs
 				if (find != null) {
 					this.correct = this.correct + k;
 				}
 				else { 
-					// 
+					// failed condition events
 					this.cntDwn--;
 					this.imageDisplay.src = "assets/images/" + this.gallows[this.cntDwn];
 					this.gessRmDisplay.innerHTML = this.cntDwn;

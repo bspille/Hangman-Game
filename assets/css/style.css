@@ -15,10 +15,12 @@ header {
 #rtbox {
 	border: 5px inset;
 	border-radius: 10px;
+	text-align: center;
 }
 #lfbox {
 	border: 5px inset;
 	border-radius: 10px;
 	background: white;
 	color: blue;
+	text-align: center;
 }
