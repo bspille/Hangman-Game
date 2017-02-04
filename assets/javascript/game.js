@@ -40,7 +40,7 @@ hangman = {
 	// the displayed word results
 	display: "",
 	
-	// the word bank array
+	// the word bank array allow !@#$%^ &?,.-'" 
 	wdBnk: ["Strike", "Freedom", "Justice",
 		 	"Dominion", "General", "Unilateral",
 		  	"Launch", "Earth", "Federation",
@@ -115,7 +115,7 @@ hangman = {
 	// rewrites the display after compairing the display with all the correct guesses recorded
 	compare: function() {
 		// creates a regexp  var that excludes characters form the crt array
-		var c = "[^" + this.correct + "]"
+		var c = "[^" + this.correct + "!@#$%^&-?'., \"]"
 		// constructs the regexp with runtime that results \[^the characters from the crt array]\g;
 		var re = new RegExp(c, "ig");
 		// rewrites the display string to only replace characters that have not been found
