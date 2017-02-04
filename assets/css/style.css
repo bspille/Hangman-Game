@@ -1,3 +1,24 @@
-div {
-	border: 1px solid;
+header {
+	text-align: center;
+}
+.txt {
+	font-size: 24px;
+}
+.txtDisplay {
+	font-size: 24px;
+	letter-spacing: 5px;
+}
+
+#gImage {
+	margin: 20px auto;
+}
+#rtbox {
+	border: 5px inset;
+	border-radius: 10px;
+}
+#lfbox {
+	border: 5px inset;
+	border-radius: 10px;
+	background: white;
+	color: blue;
 }

@@ -7,6 +7,9 @@
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
+	<!-- Darkly theme-->
+	<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/darkly/bootstrap.min.css" rel="stylesheet" integrity="sha384-S7YMK1xjUjSpEnF4P8hPUcgjXYLZKK3fQW1j5ObLSl787II9p8RO9XUGehRmKsxd" crossorigin="anonymous">
+
 	<link rel="shortcut icon" type="images/x-ico" href="assets/images/favicon.ico">
 	<link rel="icon" type="image/x-ico" href="assets/images/favicon.ico">
 
@@ -14,7 +17,7 @@
 	
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Hangman Game</title>
+	<title>Gundam Hangman</title>
 	<!-- jQuery library -->
 	<script
   	src="https://code.jquery.com/jquery-3.1.1.min.js"
@@ -28,7 +31,7 @@
 				<header class="jumbotron">
 					<h1>Gundam Hangman</h1>
 					<div class="message">
-						<span id="mssg"></span>
+						<span id="mssg" class="txt"></span>
 					</div>
 					<div>
 						<button id="play" class="btn btn-success plyAgain">Play</button>
@@ -42,22 +45,22 @@
 			<div class="col-lg-10 col-md-10 col-sm-10">
 				<div class="container-fluid">
 					<div class="row">
-						<div class="col-lg-6 col-md-6 col-sm-6">
+						<div id="lfbox" class="col-lg-6 col-md-6 col-sm-6">
 							<img id="gImage" src="" alt="Game Image">
 							<br/>
-							<span id="dialog"></span>
+							<span id="dialog" class="txt"></span>
 						</div>
-						<div class="col-lg-6 col-md-6 col-sm-6">
+						<div id="rtbox" class="col-lg-6 col-md-6 col-sm-6">
 							<h2 class="ins">Press any key to start!</h2>
 							<h2 class="wins">Wins</h2>
-							<span id="counter"></span>
+							<span id="counter" class="txt"></span>
 							<h2 class="wHeader">Current Word</h2>
-							<span id="word"></span>
+							<span id="word" class="txtDisplay"></span>
 							<h2 class="lheader">Number of guesses remaining</h2>
-							<span id="life"></span>
+							<span id="life" class="txt"></span>
 							<h2 class="gsHeader">Letters 
 							already guessed</h2>
-							<span id="log"></span>
+							<span id="log" class="txt"></span>
 						</div>
 					</div>
 				</div>
